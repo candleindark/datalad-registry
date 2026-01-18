@@ -19,6 +19,9 @@ command, i.e. one that has “DATALAD RUNCMD” in a commit message.) It provide
 ## Development Commands
 
 ### Testing
+Assuming the test environment described in `README.md` is set up, the following commands
+can be used for testing:
+
 ```bash
 # Run tests with environment variables from env.test
 (set -a && . ./env.test && set +a && python -m pytest -s -v)
