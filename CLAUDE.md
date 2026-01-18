@@ -137,5 +137,5 @@ The `datalad_registry_client` package provides a DataLad extension for interacti
 
 - Always use absolute paths in Docker volume mounts
 - The `./instance` directory is the Flask instance folder for configuration
-- Worker service doesn't auto-reload on code changes (requires restart)
+- Celery worker service doesn't auto-reload on code changes (requires restart)
 - Pre-commit hooks automatically fix formatting issues - commit again if they modify files
