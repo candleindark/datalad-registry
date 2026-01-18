@@ -4,11 +4,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-DataLad Registry is a web service for registering and tracking DataLad datasets. It provides:
-- REST API for dataset URL submission and retrieval
-- Automated metadata extraction from DataLad datasets
-- Integration with DataLad catalog and usage dashboard
-- Support for read-only replica deployment
+DataLad Registry is a web service for registering, tracking and locating datasets.
+(For convenience, we will use the term “dataset”, for the rest of this document,
+to refer to a DataLad dataset or a Git repo that has been “touched” by the datalad run
+command, i.e. one that has “DATALAD RUNCMD” in a commit message.) It provides:
+- REST API for registering datasets by URL, searching for datasets, and retrieving metadata
+- Automated metadata extraction of datasets
+- Automated update of dataset metadata
+- Integration with [datalad-usage-dashboard](https://github.com/datalad/datalad-usage-dashboard)
+  to track datasets found on various platforms, such as GitHub, OSF, GIN, hub.datalad.org,
+  and ATRIS.
+- A web UI that allows users to search and browse registered datasets and their metadata.
 
 ## Development Commands
 
