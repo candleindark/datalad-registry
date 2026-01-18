@@ -91,9 +91,12 @@ flask db downgrade
 ### Core Components
 
 1. **Flask Application** (`datalad_registry/__init__.py`): Main web service using Flask-OpenAPI3 for automatic API documentation
-2. **Celery Worker** (`datalad_registry/make_celery.py`): Background task processing for dataset metadata extraction
-3. **Database Models** (`datalad_registry/models.py`): SQLAlchemy models for RepoUrl, UrlMetadata, and ExtractedMetadata
-4. **API Blueprints** (`datalad_registry/blueprints/api/`): RESTful API endpoints for dataset operations
+2. **API Definition** (`datalad_registry/blueprints/api/`): RESTful API implementation
+3. **Celery Application** (`datalad_registry/make_celery.py`): Celery app for asynchronous task processing
+4. **Celery Tasks** (`datalad_registry/tasks/`): Celery tasks definitions
+5. **Database Models** (`datalad_registry/models.py`): SQLAlchemy models: RepoUrl, URLMetadata
+6. **DataLad-Registry Client** (`datalad_registry_client/`): DataLad extension for interacting with the registry
+
 
 ### Key Services
 
