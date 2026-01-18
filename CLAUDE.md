@@ -120,13 +120,6 @@ Key environment variables:
 - `CELERY_BROKER_URL`: RabbitMQ URL
 - `DATALAD_REGISTRY_DATASET_CACHE`: Path for caching cloned datasets
 
-### Task Processing Flow
-
-1. URL submission triggers `url_chk_dispatcher` task
-2. Dispatcher validates URL and creates `process_dataset_url` task
-3. Dataset is cloned and metadata extracted via `extract_ds_meta`
-4. Extracted metadata stored in database with relationships to RepoUrl
-
 ### DataLad Client Extension
 
 The `datalad_registry_client` package provides a DataLad extension for interacting with the registry:
