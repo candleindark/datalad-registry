@@ -117,7 +117,7 @@ The application uses environment variables for configuration, managed through:
 Key environment variables:
 - `DATALAD_REGISTRY_OPERATION_MODE`: PRODUCTION, DEVELOPMENT, or READ_ONLY
 - `SQLALCHEMY_DATABASE_URI`: PostgreSQL connection string
-- `CELERY_BROKER_URL`: Redis broker URL
+- `CELERY_BROKER_URL`: RabbitMQ URL
 - `DATALAD_REGISTRY_DATASET_CACHE`: Path for caching cloned datasets
 
 ### Task Processing Flow
