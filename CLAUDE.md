@@ -130,7 +130,6 @@ The `datalad_registry_client` package provides a DataLad extension for interacti
 
 - Tests use `env.test` configuration with separate containers
 - Database is ephemeral for test runs
-- Use `@pytest.mark.devserver` for tests requiring Flask dev server
 - Use `@pytest.mark.slow` for long-running tests
 - Test fixtures available in `conftest.py` files
 
