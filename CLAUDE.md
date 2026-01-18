@@ -103,7 +103,7 @@ flask db downgrade
 - **Web Service**: Flask application serving the API (port 5000)
 - **Worker Service**: Celery worker for async task processing
 - **Database**: PostgreSQL for persistent storage
-- **Message Broker**: Redis for Celery task queue
+- **Message Broker**: RabbitMQ for Celery task queue
 - **Flower**: Celery monitoring dashboard (optional)
 
 ### Environment Configuration
