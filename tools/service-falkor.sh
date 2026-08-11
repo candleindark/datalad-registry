@@ -49,6 +49,10 @@ echo "Environment loaded"
 # otherwise wait until `read-only-db` is healthy and `read-only-web` is
 # running. Too short a timeout is harmless: the unit simply runs this script
 # again.
-podman-compose -f docker-compose.read-only.yml up -d --wait --wait-timeout 180
+#
+# `timeout` bounds the command as a whole, because `podman-compose` waits for a
+# container dependency in an unbounded loop. A run that never exits would leave
+# the unit looking healthy while the service is down.
+timeout 1h podman-compose -f docker-compose.read-only.yml up -d --wait --wait-timeout 180
 
 echo "=== $(date) finished ==="
