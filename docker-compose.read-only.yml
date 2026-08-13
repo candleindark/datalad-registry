@@ -1,3 +1,9 @@
+# `read-only-db` below sets `userns_mode`, which Podman cannot combine with a
+# pod. podman-compose puts every service in a pod by default as of 1.6.0, so
+# that default has to be turned off here.
+x-podman:
+  in_pod: false
+
 services:
   read-only-web:
     build:

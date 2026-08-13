@@ -1,0 +1,29 @@
+# A `systemd` user unit that starts the read-only Datalad-Registry service on
+# the `falkor` server. Install it with:
+#
+#     mkdir -p ~/.config/systemd/user
+#     cp tools/service-falkor.service ~/.config/systemd/user/
+#     systemctl --user daemon-reload
+#     systemctl --user enable --now service-falkor.service
+#
+# Lingering has to be enabled for the invoking user so that the unit runs at
+# boot without a login session. Verify it with
+# `loginctl show-user <user> --property=Linger`, which should report
+# `Linger=yes`.
+#
+# `Restart=on-failure` runs the script again whenever it exits non-zero. It
+# matters most at boot: the unit can run before the host network is ready, and
+# a user unit has no way to wait for it.
+
+[Unit]
+Description=Read-only Datalad-Registry service
+Documentation=https://github.com/datalad/datalad-registry
+
+[Service]
+ExecStart=%h/Developer/datalad-registry/tools/service-falkor.sh
+RemainAfterExit=yes
+Restart=on-failure
+RestartSec=30
+
+[Install]
+WantedBy=default.target
